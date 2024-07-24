@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Cafe_UI">
   <grid id="27dc6" binding="uiPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="894" height="657"/>
+      <xy x="20" y="20" width="988" height="697"/>
     </constraints>
     <properties>
       <alignmentX value="1.0"/>
@@ -21,6 +21,9 @@
           <foreground color="-1"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
+          <iconTextGap value="0"/>
+          <inheritsPopupMenu value="true"/>
+          <preferredSize width="50" height="50"/>
           <text value="&lt;html&gt;&#10;&lt;div style=&quot;text-align: center;&quot;&gt;&#10;&lt;h1&gt;Coffee Shop&lt;/h1&gt;&#10;&lt;h2&gt;Management System&lt;/h2&gt;&#10;&lt;/div&gt;&#10;&lt;/html&gt;"/>
           <verticalAlignment value="3"/>
           <verticalTextPosition value="0"/>
@@ -36,18 +39,19 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="6bb98" binding="receiptContainer" layout-manager="BorderLayout" hgap="0" vgap="0">
+          <grid id="6bb98" binding="receiptContainer" layout-manager="BorderLayout" hgap="0" vgap="10">
             <constraints border-constraint="West"/>
             <properties>
               <background color="-9017762"/>
               <focusCycleRoot value="false"/>
               <inheritsPopupMenu value="true"/>
+              <maximumSize width="50" height="50"/>
               <opaque value="false"/>
               <preferredSize width="300" height="20"/>
               <visible value="true"/>
             </properties>
             <border type="empty" title="Receipt" title-justification="2" title-position="1">
-              <font name="JetBrains Mono" size="12" style="1"/>
+              <font name="JetBrains Mono" size="20" style="1"/>
               <title-color color="-1"/>
             </border>
             <children>
@@ -72,14 +76,6 @@
                       <margin top="2" left="6" bottom="2" right="6"/>
                     </properties>
                   </component>
-                  <component id="8a20a" class="javax.swing.JTextArea" binding="orderScreen">
-                    <constraints>
-                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="60"/>
-                      </grid>
-                    </constraints>
-                    <properties/>
-                  </component>
                   <grid id="80c95" binding="printReceipt" layout-manager="BorderLayout" hgap="0" vgap="0">
                     <constraints>
                       <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -90,12 +86,15 @@
                       <component id="dd35e" class="javax.swing.JLabel" binding="totalLabel">
                         <constraints border-constraint="West"/>
                         <properties>
-                          <text value="Label"/>
+                          <preferredSize width="31" height="17"/>
+                          <text value="Total"/>
                         </properties>
                       </component>
                       <component id="6f61b" class="javax.swing.JTextField" binding="txtFldTotal">
                         <constraints border-constraint="Center"/>
-                        <properties/>
+                        <properties>
+                          <editable value="false"/>
+                        </properties>
                       </component>
                       <component id="c0ea2" class="javax.swing.JButton" binding="payButton" default-binding="true">
                         <constraints border-constraint="South"/>
@@ -112,9 +111,19 @@
                       </grid>
                     </constraints>
                     <properties>
+                      <editable value="false"/>
+                      <enabled value="true"/>
                       <horizontalAlignment value="0"/>
                       <text value="Customer's Name "/>
                     </properties>
+                  </component>
+                  <component id="8a20a" class="javax.swing.JTextArea" binding="orderScreen">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="20"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
                   </component>
                 </children>
               </grid>
@@ -138,52 +147,58 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="a52e1" class="javax.swing.JButton" binding="button3" default-binding="true">
+                  <component id="a52e1" class="javax.swing.JButton" binding="teaBtn">
                     <constraints>
                       <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Button"/>
+                      <focusPainted value="false"/>
+                      <label value="Tea"/>
+                      <text value="Tea"/>
                     </properties>
                   </component>
-                  <component id="c4847" class="javax.swing.JLabel">
+                  <component id="c4847" class="javax.swing.JLabel" binding="juiceLabel">
                     <constraints>
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Label"/>
+                      <text value="Juice"/>
                     </properties>
                   </component>
-                  <component id="b89e6" class="javax.swing.JLabel">
+                  <component id="b89e6" class="javax.swing.JLabel" binding="teaLabel">
                     <constraints>
                       <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Label"/>
+                      <text value="Tea"/>
                     </properties>
                   </component>
-                  <component id="d1d31" class="javax.swing.JLabel">
+                  <component id="d1d31" class="javax.swing.JLabel" binding="coffeeLabel">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Label"/>
+                      <text value="Coffee"/>
                     </properties>
                   </component>
-                  <component id="d868b" class="javax.swing.JButton" binding="button2" default-binding="true">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="Button"/>
-                    </properties>
-                  </component>
-                  <component id="bbc7d" class="javax.swing.JButton" binding="button1" default-binding="true">
+                  <component id="bbc7d" class="javax.swing.JButton" binding="coffeeBtn">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Button"/>
+                      <focusPainted value="false"/>
+                      <label value="Coffee"/>
+                      <text value="Coffee"/>
+                    </properties>
+                  </component>
+                  <component id="d868b" class="javax.swing.JButton" binding="juiceBtn">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <focusPainted value="false"/>
+                      <label value="Juice"/>
+                      <text value="Juice"/>
                     </properties>
                   </component>
                 </children>
@@ -192,7 +207,7 @@
           </grid>
         </children>
       </grid>
-      <hspacer id="f9525">
+      <hspacer id="77f6a">
         <constraints border-constraint="West"/>
       </hspacer>
     </children>
