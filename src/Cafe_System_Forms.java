@@ -10,13 +10,8 @@ public class Cafe_System_Forms {
     private JButton btnEnterCafe;
 
     public Cafe_System_Forms(){
-        ImageIcon coffeeLogo = new ImageIcon(getClass().getResource("/logo/coffee-logo.png"));
+        imageIcon.setIcon(ImageUtil.resizeImage("/logo/coffee-logo.png", 200, 300));
 
-        Image originalImage = coffeeLogo.getImage();
-        Image resizeImage = originalImage.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-        ImageIcon resizedLogo = new ImageIcon(resizeImage);
-
-        imageIcon.setIcon(resizedLogo);
 
         btnEnterCafe.addActionListener(new ActionListener() {
             @Override
